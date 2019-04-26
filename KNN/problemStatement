@@ -1,0 +1,5 @@
+Apply Knn(brute force version) on these feature sets
+- Review text, preprocessed one converted into vector using BOW
+- Review text, preprocessed one converted into vector using TFIDF
+- Review text, preprocessed one converted into vector using AVG W2V
+- Review text, preprocessed one converted into vector using TfIdf W2V
