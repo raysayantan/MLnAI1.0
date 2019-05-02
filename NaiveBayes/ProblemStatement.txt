@@ -1,0 +1,31 @@
+Apply Multinomial NaiveBayes on these feature sets 
+SET 1:Review text, preprocessed one converted into vectors using (BOW)
+SET 2:Review text, preprocessed one converted into vectors using (TFIDF)
+
+The hyper paramter tuning(find best Alpha) 
+Find the best hyper parameter which will give the maximum AUC value
+Consider a wide range of alpha values for hyperparameter tuning, start as low as 0.00001
+Find the best hyper paramter using k-fold cross validation or simple cross validation data
+Use gridsearch cv or randomsearch cv or you can also write your own for loops to do this task of hyperparameter tuning
+
+Feature importance 
+Find the top 10 features of positive class and top 10 features of negative class for both feature sets Set 1 and Set 2 using values of `feature_log_prob_` parameter of MultinomialNB and print their corresponding feature names
+
+Feature engineering 
+To increase the performance of your model, you can also experiment with with feature engineering like :
+Taking length of reviews as another feature.
+Considering some features from review summary as well.
+
+Representation of results 
+You need to plot the performance of model both on train data and cross validation data for each hyper parameter, like shown in the figure. Here on X-axis you will have alpha values, since they have a wide range, just to represent those alpha values on the graph, apply log function on those alpha values. 
+Once after you found the best hyper parameter, you need to train your model with it, and find the AUC on test data and plot the ROC curve on both train and test. 
+
+Along with plotting ROC curve, you need to print the confusion matrix with predicted and original labels of test data points. Please visualize your confusion matrices using seaborn heatmaps.  
+
+Conclusion 
+You need to summarize the results at the end of the notebook, summarize it in the table format. To print out a table please refer to this prettytable library link 
+
+There will be an issue of data-leakage if you vectorize the entire data and then split it into train/cv/test.
+To avoid the issue of data-leakag, make sure to split your data first and then vectorize it. 
+While vectorizing your data, apply the method fit_transform() on you train data, and apply the method transform() on cv/test data.
+For more details please go through this link.
